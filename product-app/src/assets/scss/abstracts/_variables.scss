@@ -1,0 +1,61 @@
+// Variables
+// body
+$bodyBackgroundColor: #ffff;
+$bodyColor: #000000;
+// Header
+$headerBackgroundColor: #ffffff;
+$headerColor: #000000;
+// Sidebar
+$sidebarBackgroundColor: #4e5a60fc;
+$sidebarColor: #000000;
+$sidebarActiveColor: #ffffff;
+// List
+$listBackgroundPrimaryColor: #ffffff;
+$listBackgroundSecondaryColor: #d3d3d0;
+$listColor: #000000;
+// Popup
+$popupBackgroundColor: #ffffff;
+$popupBorderColor: #33383a;
+$popupColor: #000000;
+$popupErrorMessageColor: #ff0505;
+$popupButtonTextColor: #ffffff;
+$popupButtonColor: #108ec1;
+$popupHoverButtonColor: #05719d;
+// cards
+$emailVerificationCardPrimaryBackgroundColor: #afbfd8;
+$emailVerificationCardSecondaryBackgroundColor:#d1d1d1;
+$registerLoginPrimaryColor: #ffffff;
+$registerLoginSecondaryColor: #305446;
+$registerLoginHoverColor: #1c7854;
+$registerLoginShadowColor: #00000033;
+$registerLoginTextColor: #000000;
+$registerLoginHelpTextColor: #ff0505;
+// various
+$spinnerColor: #afbfd8;
+$divider:#33383a;
+
+//  2.0 media queries breakpoints
+$desktop: 1281px;
+$desktop-laptop-breakpoint-max: 1280px;
+$desktop-laptop-breakpoint-min: 1025px;
+$tablet-breakpoint-max: 1024px;
+$tablet-breakpoint-min: 601px;
+$mobile-breakpoint-max: 600px;
+
+/*
+// Desktops
+@media only screen and (min-width: $desktop) {
+}
+
+// Laptops, Desktops
+@media only screen and (min-width: $desktop-laptop-breakpoint-min) and (max-width: $desktop-laptop-breakpoint-max) {
+}
+
+// Tablets
+@media only screen and (min-width: $tablet-breakpoint-min) and (max-width: $tablet-breakpoint-max) {
+}
+
+// Most of the Smartphones Mobiles
+@media only screen and (max-width: $mobile-breakpoint-max) {
+}
+*/
