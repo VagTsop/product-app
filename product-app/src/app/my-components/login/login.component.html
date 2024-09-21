@@ -1,13 +1,15 @@
-<div style="height: 100%" fxLayout.gt-xs="row" fxLayout.lt-sm="column" fxLayoutAlig.lt-sm="space-between center">
+<div style="height: 100%" fxLayout.gt-xs="row" fxLayout.lt-sm="column">
 
-  <mat-card-content fxFlex.lt-sm="30"  fxLayout.lt-sm="row"  fxLayout.gt-xs="column" fxFlex.gt-xs="50"
+  <div class="millenia-logo" fxShow fxHide.gt-xs="true" fxFlex.lt-sm="20"></div>
+
+  <mat-card-content fxFlex.lt-sm="60" fxLayout.lt-sm="row" fxLayout.gt-xs="column" fxFlex.gt-xs="50"
     class="content login-image login-image-properties"></mat-card-content>
 
-  <div fxLayout="column" fxFlex.lt-sm="70"  fxFlex.gt-xs="50" fxLayoutAlign="center center">
+  <div fxLayout="column" fxFlex.lt-sm="10" fxFlex.gt-xs="50" fxLayoutAlign="center center">
 
-    <div class="millenia-logo" fxFlex="25"></div>
+    <div class="millenia-logo" fxFlex.gt-xs="25" fxShow fxHide.lt-sm="true"></div>
 
-    <mat-card-content fxLayout="column" fxFlex="30">
+    <mat-card-content fxLayout="column" fxFlex.lt-sm="20" fxFlex.gt-xs="30">
 
 
       <form fxLayoutAlign="space-between center" #loginForm="ngForm" fxLayout="column"
@@ -79,7 +81,7 @@
       </form>
     </mat-card-content>
 
-    <div fxLayout="column" fxLayoutAlign="end center" fxFlex="40">
+    <div fxLayout="column" fxLayoutAlign="end center" fxShow fxHide.lt-sm="true" fxFlex.lt-sm="20" fxFlex.gt-xs="40">
       <pre
         style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
         height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
@@ -88,6 +90,17 @@
         Copyright ©
         2020 Millenia BANK
       </div>
+    </div>
+  </div>
+
+  <div fxLayout="column"  fxShow fxHide.gt-xs="true" fxFlex.lt-sm="10" fxFlex.gt-xs="40">
+    <pre
+      style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
+      height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
+    <div
+      style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b">
+      Copyright ©
+      2020 Millenia BANK
     </div>
   </div>
 </div>

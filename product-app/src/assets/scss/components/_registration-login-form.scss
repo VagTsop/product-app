@@ -49,11 +49,12 @@ color: #9D235E;
 //     flex-direction: row;
 //   }
 
-//   /* Styles for mobile (414px and below) */
-// @media (max-width: 414px) {
-//   .login-container {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// }
+//   /* Styles for mobile (599px and below) */
+@media (max-width: 599px) {
+  .millenia-logo {
+    width:inherit;
+    max-height: 15% !important;
+    margin-top: 30px;
+  }
+ }
 // }

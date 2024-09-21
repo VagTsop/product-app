@@ -9,3 +9,10 @@
   background-position: center;
   height: 100vh;
 }
+
+
+@media (max-width: 599px) {
+  .login-image-properties {
+    margin-top: 30px;
+  }
+ }
