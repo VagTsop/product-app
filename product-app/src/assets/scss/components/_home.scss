@@ -16,3 +16,8 @@
     margin-top: 30px;
   }
  }
+@media (max-width: 599px) {
+  .mobile-form {
+    height:100vh;
+  }
+}

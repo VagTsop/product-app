@@ -7,8 +7,8 @@ import { User } from 'src/model/user';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  password: string;
-  show = false;
+  password: string = 'password';
+  show: boolean= false;
 
   constructor() { }
 

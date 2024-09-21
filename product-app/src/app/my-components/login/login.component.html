@@ -12,10 +12,10 @@
     <mat-card-content fxLayout="column" fxFlex.lt-sm="20" fxFlex.gt-xs="30">
 
 
-      <form fxLayoutAlign="space-between center" #loginForm="ngForm" fxLayout="column"
+      <form fxLayoutAlign="space-between center" class="mobile-form" #loginForm="ngForm" fxLayout="column"
         (ngSubmit)="onLogin(loginForm.value)">
 
-        <div fxLayout="column" class="example-full-width" style="margin-bottom: 40px">
+        <div fxLayout="column" class="example-full-width" fxShow fxHide.lt-sm="true" style="margin-bottom: 40px">
 
           <h1 style="font-weight: 400; font-size: 40px; line-height:40px; font-family:Roboto ;color:#3D429A">
             Hello
@@ -31,7 +31,7 @@
 
           <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
-            <input matInput fxFlex="80" type="text" name="username" ngModel #usernameInput="ngModel" required matInput>
+            <input style="padding:10px" matInput fxFlex="80" type="text" name="username" ngModel #usernameInput="ngModel" required matInput>
           </mat-form-field>
         </div>
 
@@ -40,7 +40,7 @@
             enter a password.</span> -->
           <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
-            <input matInput fxFlex="80" [type]="password" name="password" ngModel #passwordInput="ngModel" required
+            <input style="padding:10px" matInput fxFlex="80" [type]="password" name="password" ngModel #passwordInput="ngModel" required
               matInput>
             <div style="padding-left:40px" fxLayoutAlign="center center" (click)="onClick()">
               <mat-icon matTooltip="visible" style="color: #2E3275;" *ngIf="!show">visibility_off</mat-icon>
@@ -93,8 +93,8 @@
     </div>
   </div>
 
-  <div style="position:relative;top:122%" fxLayout="column" fxShow fxHide.gt-xs="true"
-    fxFlex.lt-sm="50" fxFlex.gt-xs="40">
+  <div style="position:relative;top:26%" fxLayout="column" fxShow fxHide.gt-xs="true" fxFlex.lt-sm="50"
+    fxFlex.gt-xs="40">
     <pre style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
       height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
     <div fxShow fxHide.lt-sm="true"
