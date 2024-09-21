@@ -7,12 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './my-components/login/login.component';
 import { ProductDetailsComponent } from './my-components/product-details/product-details.component';
 import { ProductListComponent } from './my-components/product-list/product-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './my-components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HeaderComponent,
     ProductDetailsComponent,
     ProductListComponent
   ],
@@ -21,6 +24,7 @@ import { ProductListComponent } from './my-components/product-list/product-list.
     BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
+    AppRoutingModule
   ],
 
   bootstrap: [AppComponent]

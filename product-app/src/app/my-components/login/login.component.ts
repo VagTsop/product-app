@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/model/user';
 
 @Component({
@@ -7,12 +8,12 @@ import { User } from 'src/model/user';
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit, OnDestroy {
-
+  @Output() loginSuccess = new EventEmitter<void>();
   loginForm: FormGroup;
   password: string = 'password';
   show: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -26,13 +27,20 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onLogin(): void {
     if (this.loginForm.valid) {
-      console.log('Form submitted.');
-      console.log('User data:', this.loginForm.value);
+      const username = this.loginForm.get('username')?.value;
+      const password = this.loginForm.get('password')?.value;
+
+      // Check for specific username and navigate
+      if (username === 'admin' && password === '123') {  // Change 'admin' to your desired username
+        console.log('Login successful for admin');
+        this.loginSuccess.emit(); // Emit event on successful login
+      } else {
+        console.log('Invalid username or password');
+      }
     } else {
       console.log('Form is invalid.');
     }
   }
-
   onClick() {
     if (this.password === 'password') {
       this.password = 'text';
