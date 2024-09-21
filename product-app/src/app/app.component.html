@@ -1,5 +1,26 @@
-<div fxLayout="column">
+<div style="padding:25px;padding:50px;" fxLayout="column">
   <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
   <app-header *ngIf="isLoggedIn"></app-header>
-  <router-outlet *ngIf="isLoggedIn"></router-outlet>
+
+  <mat-sidenav-container *ngIf="isLoggedIn" class="sidenav_container">
+    <mat-sidenav-content fxLayout="row">
+      <div fxLayout="column" fxFlex="30">
+        <div>
+          <img src="./assets/images/icons/Dashboard.png" style="width:40px;height:40px">
+          <div>Dashboard</div>
+        </div>
+        <div>
+          <img src="./assets/images/icons/ic_assessment.png" style="width:40px;height:40px">
+          <div>Portfolio</div>
+        </div>
+        <div>
+          <img src="./assets/images/icons/swap_horiz.png" style="width:40px;height:40px">
+          <div>Transactions</div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="70">
+        <router-outlet *ngIf="isLoggedIn"></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
