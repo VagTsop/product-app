@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/model/user';
 
 @Component({
@@ -7,17 +8,29 @@ import { User } from 'src/model/user';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  loginForm: FormGroup;
   password: string = 'password';
-  show: boolean= false;
+  show: boolean = false;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required]],  // Add validators as needed
+      password: ['', [Validators.required]],
+    });
+  }
 
 
 
-  onLogin(user: User): void {
-
+  onLogin(): void {
+    if (this.loginForm.valid) {
+      console.log('Form submitted.');
+      console.log('User data:', this.loginForm.value);
+    } else {
+      console.log('Form is invalid.');
+    }
   }
 
   onClick() {

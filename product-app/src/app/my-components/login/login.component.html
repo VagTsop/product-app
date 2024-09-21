@@ -12,8 +12,8 @@
     <mat-card-content fxLayout="column" fxFlex.lt-sm="20" fxFlex.gt-xs="30">
 
 
-      <form fxLayoutAlign="space-between center" class="mobile-form" #loginForm="ngForm" fxLayout="column"
-        (ngSubmit)="onLogin(loginForm.value)">
+      <form fxLayoutAlign="space-between center" class="mobile-form" fxLayout="column" [formGroup]="loginForm"
+        (ngSubmit)="onLogin()">
 
         <div fxLayout="column" class="example-full-width" fxShow fxHide.lt-sm="true" style="margin-bottom: 40px">
 
@@ -29,19 +29,23 @@
 
         <div fxLayout="column" style="margin-bottom: 20px">
 
+          <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+            Please enter a username.</span>
+
           <mat-form-field class="example-full-width">
             <mat-label>Username</mat-label>
-            <input style="padding:10px" matInput fxFlex="80" type="text" name="username" ngModel #usernameInput="ngModel" required matInput>
+            <input matInput style="padding:10px" fxFlex="80" formControlName="username" type="text" required>
           </mat-form-field>
         </div>
 
         <div fxLayout="column">
-          <!-- <span *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">Please
-            enter a password.</span> -->
+          <span *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+            Please enter a password.
+          </span>
+
           <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
-            <input style="padding:10px" matInput fxFlex="80" [type]="password" name="password" ngModel #passwordInput="ngModel" required
-              matInput>
+            <input matInput style="padding:10px" fxFlex="80" [type]="password" formControlName="password" required>
             <div style="padding-left:40px" fxLayoutAlign="center center" (click)="onClick()">
               <mat-icon matTooltip="visible" style="color: #2E3275;" *ngIf="!show">visibility_off</mat-icon>
               <mat-icon matTooltip="not visible" style="color: #2E3275;" *ngIf="show">visibility</mat-icon>
