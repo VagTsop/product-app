@@ -1,22 +1,11 @@
-.user-manager {
+.login-image {
+  background-image: url(../../../assets/images/login/main_illustration.png);
 }
 
-.instrument-manager {
-}
 
-.instrument-series-manager {
-}
-
-.content {
-  background-origin: content-box;
+.login-image-properties {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 250px;
-  height: 200px;
-  padding:25px;
-  cursor:pointer;
-}
-.content:hover {
-  border: none;
+  height: 100vh;
 }
