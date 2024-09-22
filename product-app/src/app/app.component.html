@@ -1,4 +1,4 @@
-<div style="padding:25px;background-color: #F4F5FB;;height:100%" fxLayout="column">
+<div style="background-color: #F4F5FB;height:100%" fxLayout="column" class="mobile-main-container">
   <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
   <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn" fxShow fxHide.lt-sm="true"></app-header>
 

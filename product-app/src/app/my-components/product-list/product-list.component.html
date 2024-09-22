@@ -1,4 +1,4 @@
-<div style="height: 100%" fxLayout.lt-sm="column wrap" fxLayout.gt-xs="row">
+<div style="height: 100%" fxLayout.lt-sm="column wrap" fxLayout.gt-xs="row" class="mobile-container">
 
   <div style="padding-left:35px" fxShow fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center"
     fxFlex="50" style="height:555px">
@@ -22,7 +22,7 @@
 
 
   <div fxShow fxHide.gt-xs="true" fxFlex="16" fxLayoutAlign="start end"
-    style="width:100%;  background: linear-gradient(135deg, #4b3f72, #d5538c);">
+    style="width:107%;  background: linear-gradient(135deg, #4b3f72, #d5538c);">
     <p
       style="font-weight: 400px;font-family: Roboto;line-height:40.25px;letter-spacing: 1.25px;font-size: 35px;color: #FFFFFF;padding-left:20px;padding-bottom: 10px;">
       Porfolio</p>
@@ -30,7 +30,7 @@
 
   <div fxLayout="column" fxFlex="50">
 
-    <div class="product-section" >
+    <div class="product-section" style="padding: 25px;padding-top:0">
       <!-- Loop through the grouped product names -->
       <ng-container *ngFor="let productGroup of groupedProducts | keyvalue">
         <div class="product-group" style="margin-top:30px">
@@ -105,3 +105,5 @@
       </div>
     </div>
   </div>
+
+</div>

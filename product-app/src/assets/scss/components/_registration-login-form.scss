@@ -140,3 +140,15 @@ padding: 25px;
       0px 3px 3px 0px rgba(0, 0, 0, 0.2),
       0px 3px 20px 0px rgba(0, 0, 0, 0.15); /* Αυξημένη διάδοση */
 }
+
+.mobile-container{
+  padding:0;
+}
+.mobile-main-container {
+  padding: 25px;
+}
+@media (max-width: 599px) {
+  .mobile-main-container {
+    padding: 0;
+  }
+}
