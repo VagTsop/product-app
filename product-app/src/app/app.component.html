@@ -1,4 +1,4 @@
-<div style="padding:25px;padding:50px;background-color: #F4F5FB;" fxLayout="column">
+<div style="padding:25px;background-color: #F4F5FB;" fxLayout="column">
   <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
   <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn"></app-header>
 
@@ -22,5 +22,6 @@
         <router-outlet *ngIf="isLoggedIn"></router-outlet>
       </div>
     </mat-sidenav-content>
+
   </mat-sidenav-container>
 </div>
