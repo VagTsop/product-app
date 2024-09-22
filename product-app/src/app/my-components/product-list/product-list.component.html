@@ -27,7 +27,9 @@
       <!-- Loop through the grouped product names -->
       <ng-container *ngFor="let productGroup of groupedProducts | keyvalue">
         <div class="product-group">
-          <h2 style="font-family:Roboto; font-weight: 500;font-size: 14px;line-height: 23.8px;color: #2E3275;">{{
+          <h2
+            style="font-family:Roboto; font-weight: 500;font-size: 14px;line-height: 23.8px;color: #2E3275; margin-top: 35px;">
+            {{
             productGroup.key }}
           </h2> <!-- Product Title -->
 
@@ -59,8 +61,15 @@
                   </div>
                 </div>
 
-                <div fxLayout="column" fxFlex="49">
-                  <p class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
+                <div fxLayout="column" fxFlex="49" fxLayoutAlign="end end">
+
+                  <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #6267C1;;">
+                    {{ product.status === 'Active' ? 'active' : 'disabled' }}
+                  </p>
+
+
+                  <p style="font-family:Roboto; font-weight: 700;font-size: 16px;line-height: 18.75px;color: #2E3275;"
+                    class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
                   <!-- Display balance with currency -->
                 </div>
               </div>
