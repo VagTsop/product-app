@@ -23,8 +23,38 @@
 
   <div fxLayout="column" fxFlex="50">
 
-    <mat-card style="height:100%">
+    <div class="product-section">
+      <!-- Loop through the grouped product names -->
+      <ng-container *ngFor="let productGroup of groupedProducts | keyvalue">
+        <div class="product-group">
+          <h2 style="font-family:Roboto; font-weight: 500;font-size: 14px;line-height: 23.8px;color: #2E3275;">{{
+            productGroup.key }}
+          </h2> <!-- Product Title -->
 
-    </mat-card>
+          <!-- Loop through the products under the same title -->
+          <ng-container *ngFor="let product of productGroup.value">
+            <mat-card>
+              <div fxLayout="row">
+                <div fxLayout="column" fxFlex="50">
+                  <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;">
+                    {{ product.titleNickname }}</p>
+
+                  <!-- Use title or nickname -->
+                  <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle }}
+                  </p>
+                  <div>
+                    <img [src]="product.thumbnailUrl" alt="Product Icon">
+                  </div>
+                </div>
+                <div fxLayout="column" fxFlex="50">
+                  <p class="price">{{ product.balance | currency:product.currencyCode }}</p>
+                  <!-- Display balance with currency -->
+                </div>
+              </div>
+            </mat-card>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>
