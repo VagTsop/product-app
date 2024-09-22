@@ -63,10 +63,10 @@ padding-bottom:15px;
   background: none !important;
 }
 .card {
-  width: 350px;
-  height: 450px;
+  width: 521px;
+  height: 322px;
   background: linear-gradient(135deg, #4b3f72, #d5538c);
-  border-radius: 30px;
+  border-radius:  0 75px 0 75px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -75,6 +75,7 @@ padding-bottom:15px;
   color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   position: relative;
+  z-index: 1; /* Lower z-index to allow image on top */
 }
 
 .content h2 {
@@ -98,10 +99,19 @@ padding-bottom:15px;
   align-items: center;
 }
 
+.content  {
+text-align: left;
+width: 100%;
+padding: 25px;
+}
+
 .illustration {
+  position: absolute; /* Image positioned absolutely */
   width: 140px;
   height: 300px;
   object-fit: contain;
+  z-index: 2; /* Higher z-index to appear above the card */
+  top: -50px; /* Adjust positioning to move the image above the card */
 }
 
 .card-button {
@@ -109,8 +119,12 @@ padding-bottom:15px;
   border: none;
   padding: 10px 20px;
   color: white;
-  border-radius: 50px;
+  border-radius: 30px;
+  width: 218px;
+  height: 56px;
   font-size: 14px;
+  font-weight: 500;
+  font-family: Roboto;
   cursor: pointer;
   text-transform: uppercase;
 }
