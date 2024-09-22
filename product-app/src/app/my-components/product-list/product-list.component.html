@@ -48,22 +48,29 @@
                 }"> </div>
 
 
-                <div fxLayout="column" fxFlex="50" style="padding-left: 30px;">
-                  <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;">
-                    {{ product.titleNickname }}</p>
+                <div fxLayout="column" fxFlex="50" style="padding-left: 30px;" fxLayoutAlign="start space-between ">
 
-                  <!-- Use title or nickname -->
-                  <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle }}
-                  </p>
+                  <div style="padding-top: 10px;">
+                    <p
+                      style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
+                      {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
 
-                  <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
-                    <img [src]="product.thumbnailUrl" alt="Product Icon">
+                    <!-- Use title or nickname -->
+                    <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle }}
+                    </p>
+                  </div>
+
+                  <div style="padding-top: 10px;">
+                    <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
+                      <img [src]="product.thumbnailUrl" alt="Product Icon">
+                    </div>
                   </div>
                 </div>
 
                 <div fxLayout="column" fxFlex="49" fxLayoutAlign="end end">
 
-                  <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #6267C1;;">
+                  <p
+                    style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 16px;color: #6267C1;margin: 0;">
                     {{ product.status === 'Active' ? 'active' : 'disabled' }}
                   </p>
 
