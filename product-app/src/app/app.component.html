@@ -1,4 +1,4 @@
-<div style="padding:25px;background-color: #F4F5FB;" fxLayout="column">
+<div style="padding:25px;background-color: #F4F5FB;;height:100%" fxLayout="column">
   <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
   <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn"></app-header>
 
@@ -24,4 +24,12 @@
     </mat-sidenav-content>
 
   </mat-sidenav-container>
+  <div fxLayout="column" fxLayoutAlign="end center" fxShow fxHide.lt-sm="true" fxFlex.gt-xs="15">
+    <pre style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
+      height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
+    <div style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b">
+      Copyright ©
+      2020 Millenia BANK
+    </div>
+  </div>
 </div>
