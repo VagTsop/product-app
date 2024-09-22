@@ -1,4 +1,4 @@
-<div fxFlex>
+<div fxFlex fxShow fxHide.lt-sm="true">
 
   <mat-toolbar class="header" fxFlex>
 
@@ -6,18 +6,6 @@
       <div fxFlex="85">
         <img src="./assets/images/login/MILLENIA.png" style="width:80px">
       </div>
-
-
-      <!-- <mat-menu #ol="matMenu">
-      <mat-list-item mat-menu-item fxLayoutAlign="start center" menuToggleLink>
-        <a class="sidenav_item" menuToggle routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
-          <div fxLayout="column" fxLayoutAlign="space-between center" fxFlex="100">
-            <div>
-            </div>
-          </div>
-        </a>
-      </mat-list-item>
-    </mat-menu> -->
 
       <div fxLayout="row" fxFlex="15" fxLayoutAlign="center center">
         <a style="cursor:pointer;padding-right:30px" class="header__header-items--header-item"
@@ -30,6 +18,25 @@
         <a style="cursor:pointer;padding-left:15px" class="header__header-items--header-item"><img
             matTooltip="User Details" src="./assets/images/icons/user_details.png"></a>
       </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+
+<div fxFlex fxShow fxHide.gt-xs="true" style="background-color: white;">
+
+  <mat-toolbar class="header" fxFlex>
+
+    <div fxLayout="row" fxFlex fxLayoutAlign="center center">
+
+      <a fxFlex="25" style="cursor:pointer;text-align: center;" class="header__header-items--header-item" [routerLink]="['/home']"><img
+          matTooltip="messages" src="./assets/images/icons/mobile/mobile_home.png"></a>
+      <a fxFlex="25" style="cursor:pointer;text-align: center;" class="header__header-items--header-item"><img matTooltip="Turn On"
+          src="./assets/images/icons//mobile/mobile-graph.png"></a>
+      <a fxFlex="25" style="cursor:pointer;text-align: center;" class="header__header-items--header-item"><img matTooltip="Turn On"
+          src="./assets/images/icons//mobile/mobile-arrows.png"></a>
+      <a fxFlex="25" style="cursor:pointer;text-align: center;" class="header__header-items--header-item"><img matTooltip="Turn On"
+          src="./assets/images/icons//mobile/mobile-profile-pic.png"></a>
     </div>
   </mat-toolbar>
 </div>
