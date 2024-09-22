@@ -33,9 +33,20 @@
 
           <!-- Loop through the products under the same title -->
           <ng-container *ngFor="let product of productGroup.value">
+
             <mat-card>
+
               <div fxLayout="row">
-                <div fxLayout="column" fxFlex="50">
+
+                <div fxLayout="column" fxFlex="1" [ngStyle]="{
+                  'height.px': 140,
+                  'width.px': 8,
+                  'background-color': colorMapping[productGroup.key] || '#000',
+                  'border-radius': '20px'
+                }"> </div>
+
+
+                <div fxLayout="column" fxFlex="50" style="padding-left: 30px;">
                   <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;">
                     {{ product.titleNickname }}</p>
 
@@ -47,8 +58,9 @@
                     <img [src]="product.thumbnailUrl" alt="Product Icon">
                   </div>
                 </div>
-                <div fxLayout="column" fxFlex="50">
-                  <p class="price">{{ product.balance | currency:product.currencyCode }}</p>
+
+                <div fxLayout="column" fxFlex="49">
+                  <p class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
                   <!-- Display balance with currency -->
                 </div>
               </div>

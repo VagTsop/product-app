@@ -8,6 +8,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit, OnDestroy {
   groupedProducts: any = {};
 
+  colorMapping: { [key: string]: string } = {
+    'CURRENT ACCOUNT': '#961B92',
+    'LOAN': '#38B7FF;',
+    'CREDIT CARD': '#5AB970'
+  };
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
