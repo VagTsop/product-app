@@ -62,3 +62,59 @@ padding-bottom:15px;
 .mat-toolbar {
   background: none !important;
 }
+.card {
+  width: 350px;
+  height: 450px;
+  background: linear-gradient(135deg, #4b3f72, #d5538c);
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.content p {
+  margin: 5px 0 20px;
+  font-size: 16px;
+  color: #f9c8db;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 140px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration {
+  width: 140px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.card-button {
+  background: linear-gradient(to right, #4b3f72, #d5538c);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.card-button:hover {
+  opacity: 0.9;
+}
