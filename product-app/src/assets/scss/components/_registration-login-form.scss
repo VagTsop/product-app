@@ -152,3 +152,18 @@ padding: 25px;
     padding: 0;
   }
 }
+.round-button {
+  width: 56px;          /* Fixed width */
+  height: 56px;         /* Fixed height */
+  position: relative;   /* Allows for positioning the button relative to parent */
+  border-radius: 50%;   /* Make it round */
+  background: linear-gradient(to right, #4b3f72, #d5538c);
+  display: flex;        /* Flexbox to center the icon */
+  align-items: center;  /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better look */
+  border-radius: 30px;  /* Rounded corners */
+  cursor: pointer;      /* Changes cursor to pointer on hover */
+  top: -98px;
+  left: 213px;
+}
