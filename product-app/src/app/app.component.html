@@ -2,7 +2,7 @@
   <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
   <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn" fxShow fxHide.lt-sm="true"></app-header>
 
-  <mat-sidenav-container *ngIf="isLoggedIn" class="sidenav_container" style="background-color: #F4F5FB;height:100%">
+  <mat-sidenav-container *ngIf="isLoggedIn" class="sidenav_container" style="background-color: #F4F5FB;height:100%;">
     <mat-sidenav-content fxLayout="row">
       <div fxLayout="column" fxHide.lt-sm="true" fxLayoutAlign="space-around center" fxFlex="6.5"
         style="height:430px;padding-top:45px">
