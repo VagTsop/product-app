@@ -1,9 +1,9 @@
-<div style="height: 100%" fxLayout="row">
+<div style="height: 100%" fxLayout.lt-sm="column wrap" fxLayout.gt-xs="row">
 
-  <div style="padding-left:35px" fxLayout="column" fxLayoutAlign="space-between center" fxFlex="50"
-    style="height:555px">
+  <div style="padding-left:35px" fxShow fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center"
+    fxFlex="50" style="height:555px">
 
-    <div class="card">
+    <div fxHide.lt-sm="true" class="card">
 
       <div class="content">
 
@@ -17,16 +17,23 @@
       </div>
     </div>
 
-    <button class="card-button">VIEW ALL OUR PRODUCTS</button>
+    <button fxHide.lt-sm="true" class="card-button">VIEW ALL OUR PRODUCTS</button>
+  </div>
 
+
+  <div fxShow fxHide.gt-xs="true" fxFlex="16" fxLayoutAlign="start end"
+    style="width:100%;  background: linear-gradient(135deg, #4b3f72, #d5538c);">
+    <p
+      style="font-weight: 400px;font-family: Roboto;line-height:40.25px;letter-spacing: 1.25px;font-size: 35px;color: #FFFFFF;padding-left:20px;padding-bottom: 10px;">
+      Porfolio</p>
   </div>
 
   <div fxLayout="column" fxFlex="50">
 
-    <div class="product-section">
+    <div class="product-section" >
       <!-- Loop through the grouped product names -->
       <ng-container *ngFor="let productGroup of groupedProducts | keyvalue">
-        <div class="product-group">
+        <div class="product-group" style="margin-top:30px">
           <h2 style="font-family:Roboto; font-weight: 500;font-size: 14px;line-height: 23.8px;color: #2E3275">
             {{
             productGroup.key }}
@@ -55,7 +62,8 @@
                       {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
 
                     <!-- Use title or nickname -->
-                    <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle }}
+                    <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle
+                      }}
                     </p>
                   </div>
 
@@ -85,9 +93,6 @@
       </ng-container>
     </div>
 
-
-
-
     <div fxLayout="column" fxLayoutAlign="end center" fxShow fxHide.lt-sm="true" fxFlex.gt-xs="15"
       style="position: fixed; bottom: 20px; right: 0%;left: 50%">
       <pre
@@ -99,5 +104,4 @@
         2020 Millenia BANK
       </div>
     </div>
-
   </div>
