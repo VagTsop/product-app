@@ -8,13 +8,59 @@
       <img src="./assets/images/icons/arrow_left.png" style="width:24px;height:24px;margin-bottom:17px">
 
       <h2 style="font-weight: 400; font-size: 40px; line-height:40px; font-family:Roboto">Current Accounts</h2>
+
+      <mat-card style="cursor:pointer;width:441px;height:291px;border-radius:8px">
+
+        <div fxLayout="row">
+
+          <div fxLayout="column" fxFlex="1" [ngStyle]="{
+            'height.px': 246.37,
+            'width.px': 8,
+            'background-color': '#5AB970',
+            'border-radius': '20px'
+          }"> </div>
+
+          <div fxLayout="column" fxFlex="50" style="padding-left: 30px;" fxLayoutAlign="start space-between ">
+
+            <div style="padding-top: 10px;">
+              <p
+                style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
+                {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
+
+              <!-- Use title or nickname -->
+              <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle
+                }}
+              </p>
+            </div>
+
+            <div style="padding-top: 10px;">
+              <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
+                <img [src]="product.thumbnailUrl" alt="Product Icon">
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="column" fxFlex="49" fxLayoutAlign="end end">
+
+            <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 16px;color: #6267C1;margin: 0;">
+              {{ product.status === 'Active' ? 'active' : 'disabled' }}
+            </p>
+
+
+            <p style="font-family:Roboto; font-weight: 700;font-size: 16px;line-height: 18.75px;color: #2E3275;"
+              class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
+            <!-- Display balance with currency -->
+          </div>
+        </div>
+      </mat-card>
     </div>
 
 
   </div>
 
 
-  <button fxHide.lt-sm="true" style="position: absolute;bottom: -74px;left: 110px;z-index: 1;"
-    class="card-button"><mat-icon style="color:white;" matTooltip="Add Product">add
+  <button fxHide.lt-sm="true" fxLayoutAlign="space-between center"
+    style="position: absolute;bottom: -74px;left: 110px;z-index: 1;" class="card-button"><mat-icon style="color:white;"
+      matTooltip="Add Product">add
     </mat-icon> NEW TRANSACTION</button>
 </div>

@@ -40,7 +40,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   onProductClick(product: any): void {
-    this.router.navigate(['/products', product.id]); // Navigate to ProductDetailsComponent with the product ID
+    this.router.navigate(['/products', product.id], { state: { product } }); // Pass full product as state
   }
   ngOnDestroy() { }
 }
