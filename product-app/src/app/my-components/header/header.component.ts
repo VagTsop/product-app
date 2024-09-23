@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  @Input() username: string = '';  // Accept username as an input
 
   constructor(public router: Router) { }
 

@@ -1,6 +1,7 @@
 <div style="background-color: #F4F5FB;height:100%" fxLayout="column" class="mobile-main-container">
-  <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess()"></app-login>
-  <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn" fxShow fxHide.lt-sm="true"></app-header>
+  <app-login fxFlex *ngIf="!isLoggedIn" (loginSuccess)="onLoginSuccess($event)"></app-login>
+  <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn" [username]="username" D fxShow
+    fxHide.lt-sm="true"></app-header>
 
   <mat-sidenav-container *ngIf="isLoggedIn" class="sidenav_container" style="background-color: #F4F5FB;height:100%;">
     <mat-sidenav-content fxLayout="row">
@@ -28,4 +29,3 @@
 
   <app-header style="background-color: #F4F5FB;" *ngIf="isLoggedIn" fxShow fxHide.gt-xs="true"></app-header>
 </div>
-

@@ -7,14 +7,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   isLoggedIn = false;
+  username: string = '';
+
   constructor(public router: Router
   ) { }
 
   ngOnInit() {
 
   }
-  onLoginSuccess() {
+  onLoginSuccess(username: string) {
     this.isLoggedIn = true;
+    this.username = username;  // Store the username
     this.router.navigate(['/product-list']); // Navigate to product details after login
   }
 }

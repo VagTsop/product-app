@@ -8,32 +8,30 @@ import { User } from 'src/model/user';
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  @Output() loginSuccess = new EventEmitter<void>();
+  @Output() loginSuccess = new EventEmitter<string>();  // Emit username as a string
   loginForm: FormGroup;
   password: string = 'password';
   show: boolean = false;
+  user: User;
 
   constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-
+    this.user = new User();
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],  // Add validators as needed
       password: ['', [Validators.required]],
     });
   }
 
-
-
   onLogin(): void {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
-
       // Check for specific username and navigate
       if (username === 'admin' && password === '123') {  // Change 'admin' to your desired username
         console.log('Login successful for admin');
-        this.loginSuccess.emit(); // Emit event on successful login
+        this.loginSuccess.emit(username);  // Emit username on successful login
       } else {
         console.log('Invalid username or password');
       }
@@ -50,7 +48,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.show = false;
     }
   }
-
 
   ngOnDestroy() { }
 }
