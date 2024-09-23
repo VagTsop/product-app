@@ -20,36 +20,32 @@
             'border-radius': '20px'
           }"> </div>
 
-          <div fxLayout="column" fxFlex="50" style="padding-left: 30px;" fxLayoutAlign="start space-between ">
+          <div fxFlex fxLayout="column">
 
-            <div style="padding-top: 10px;">
-              <p
-                style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
-                {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
+            <div fxLayout="row" style="width:100%" fxLayoutAlign="space-between center">
 
-              <!-- Use title or nickname -->
-              <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle
-                }}
-              </p>
-            </div>
-
-            <div style="padding-top: 10px;">
               <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
                 <img [src]="product.thumbnailUrl" alt="Product Icon">
               </div>
+
+              <div>
+                <p
+                  style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
+                  {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
+
+                <!-- Use title or nickname -->
+                <p style="font-family:Roboto; font-weight: 700;font-size: 28px;line-height: 32px;color: #2E3275;"
+                  class="price"> {{ product.balance | currency: product.currencyCode: 'symbol':'1.2-2' }} <span
+                    style="font-family:Roboto; font-weight: 400;font-size: 28px;line-height: 16px;color: #2E3275;">{{
+                    product.currencyCode }}</span>
+                </p>
+
+              </div>
             </div>
-          </div>
 
-          <div fxLayout="column" fxFlex="49" fxLayoutAlign="end end">
+            <div fxLayout="row" style="width:100%">
 
-            <p style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 16px;color: #6267C1;margin: 0;">
-              {{ product.status === 'Active' ? 'active' : 'disabled' }}
-            </p>
-
-
-            <p style="font-family:Roboto; font-weight: 700;font-size: 16px;line-height: 18.75px;color: #2E3275;"
-              class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
-            <!-- Display balance with currency -->
+            </div>
           </div>
         </div>
       </mat-card>
@@ -64,7 +60,9 @@
       matTooltip="Add Product">add
     </mat-icon> NEW TRANSACTION</button>
 
-  <div class="container" fxLayout="column">
+  <div class="container"
+    style="width:43%;position: absolute;right:0;z-index: 3;right: 151px;top: 68px;border-radius: 30px;"
+    fxLayout="column">
 
     <div class="search-header">
       <!-- Search Input -->
@@ -84,18 +82,53 @@
       <p>EXPORT</p>
     </div>
 
+    <div fxLayout="row" fxFlex fxLayoutAlign="space-between center">
 
+      <div fxLayout="column">
+        <p style="font-family:Roboto;font-weight: 400;font-size: 16px;line-height: 16px;color:#2E3275">
+          LATEST TRANSACTIONS<br
+            style="font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 15.96px;color:#3D429A">
+          You can tap any transaction below to initiate a new one with the same information</p>
+      </div>
+
+      <div fxLayout="column">
+        <button class="export-btn">
+          <img src="./assets/images/icons/caret_down.png" style="width:24px;height:24px;margin-bottom:17px">
+        </button>
+      </div>
+    </div>
 
     <!-- Filtered Results -->
     <div class="transaction-list" *ngIf="filteredResults.length > 0">
+
       <div *ngFor="let result of filteredResults" class="transaction-item">
-        <div class="transaction-date">{{ result.date | date:'dd/MM/yyyy' }}</div>
-        <div class="transaction-details">
-          <div class="transaction-title">{{ result.title }}</div>
-          <div class="transaction-subtitle">{{ result.subtitle }}</div>
-        </div>
-        <div class="transaction-amount" [ngClass]="{'debit': result.amount < 0, 'credit': result.amount > 0}">
-          {{ result.amount | number:'1.2-2' }} {{ result.currencyCode }}
+
+        <div fxLayout="column" fxFlex>
+
+          <div style="font-weight: 400; font-size: 16px; line-height:16px; font-family:Roboto;color: #2E3275;"
+            class="transaction-date">
+            {{ result.date | date:'dd/MM/yyyy' }}</div>
+
+
+          <div class="transaction-details" fxLayout="row" fxFlex style="padding-top:20px;margin-left: 0;">
+            <div fxLayout="column" fxFlex="80">
+              <div class="transaction-title"
+                style="font-weight: 500; font-size: 22px; line-height:24px; font-family:Roboto;color: #2E3275;">{{
+                result.title }}</div>
+
+              <div style="font-weight: 400; font-size: 16px; line-height:24px; font-family:Roboto;color: #3D429A;"
+                class="transaction-subtitle">{{ result.subtitle }}</div>
+            </div>
+
+            <div fxLayout="column" fxFlex="20">
+              <div class="transaction-amount" [ngClass]="{'debit': result.amount < 0, 'credit': result.amount > 0}"
+                style="font-weight: 700; font-size: 22px; line-height:32px; font-family:Roboto;color: #2E3275;padding-top:16px">
+                {{ result.amount | number:'1.2-2' }} <span
+                  style="font-weight: 400; font-size: 22px; line-height:16px; font-family:Roboto;color: #3D429A;">{{
+                  result.currencyCode }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
