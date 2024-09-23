@@ -1,28 +1,24 @@
-<div style="height: 90%" fxLayout.gt-xs="row" fxLayout.lt-sm="column">
+<div style="height: 94%" fxLayout.gt-xs="row" fxLayout.lt-sm="column">
 
-  <div class="millenia-logo" fxShow fxHide.gt-xs="true" fxFlex.lt-sm="20"></div>
+  <div class="millenia-logo" fxHide.gt-xs="true" fxFlex.lt-sm="20"></div>
 
-  <mat-card-content fxFlex.lt-sm="60" fxLayout.lt-sm="row" fxLayout.gt-xs="column" fxFlex.gt-xs="50"
-    class="content login-image login-image-properties"></mat-card-content>
+  <mat-card-content fxFlex.lt-sm="60" fxFlex.gt-xs="50" class="content login-image"></mat-card-content>
 
   <div fxLayout="column" fxFlex.lt-sm="10" fxFlex.gt-xs="50" fxLayoutAlign="center center">
 
-    <div class="millenia-logo" fxFlex.gt-xs="25" fxShow fxHide.lt-sm="true"></div>
+    <div class="millenia-logo" fxFlex.gt-xs="25"></div>
 
     <mat-card-content fxLayout="column" fxFlex.lt-sm="20" fxFlex.gt-xs="30">
 
+      <form class="mobile-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
-      <form fxLayoutAlign="space-between center" class="mobile-form" fxLayout="column" [formGroup]="loginForm"
-        (ngSubmit)="onLogin()">
+        <div class="example-full-width" fxHide.lt-sm="true" style="margin-bottom: 40px">
 
-        <div fxLayout="column" class="example-full-width" fxShow fxHide.lt-sm="true" style="margin-bottom: 40px">
-
-          <h1 style="font-weight: 400; font-size: 40px; line-height:40px; font-family:Roboto ;color:#3D429A">
+          <h1 class="greetings">
             Hello
           </h1>
 
-          <span style="font-weight: 500;font-size: 18px;font-family: Roboto;line-height:23.94px;"
-            class="error-message">Please
+          <span class="error-message call-for-credentials">Please
             enter your Credentials</span>
         </div>
 
@@ -53,54 +49,42 @@
           </mat-form-field>
         </div>
 
-        <div style="text-align: right;width:100%;margin-top: 15px; font-weight: 700;font-size: 16px;">
+        <div class="forgot-credentials">
           <a>I forgot my Credentials</a>
         </div>
 
 
-        <mat-dialog-actions fxLayout="column" style="margin-top:30px;" fxLayoutAlign="center center">
-          <button style="width: 378px;height: 56px; border-radius:5px" class="mat-raised-button mat-primary gradient"
-            type="submit" [disabled]="loginForm.invalid" name="button">
-            <div
-              style="font-weight: 500px;font-family: Roboto;line-height:15.96px;letter-spacing: 1.25px;font-size: 14px;">
-              LOGIN</div>
+        <mat-dialog-actions fxLayout="column" style="margin-top:30px;">
+          <button class="mat-raised-button mat-primary gradient login-button" type="submit"
+            [disabled]="loginForm.invalid" name="button">
+            <div>LOGIN</div>
           </button>
 
-          <div fxLayout="row"
-            style="color:#41427b;line-height: 24px;font-weight: 400;font-size: 16px; padding-top: 15px;"
-            fxLayoutAlign="center start">
+          <div class="ask-for-account" fxLayoutAlign="center start">
+
             <div fxLayout="row">
 
               <div>Don't you have an account?</div>
 
               <pre>   </pre>
 
-              <a style="color: #2E3275;font-weight: 700;font-size: 16px;font-family: Roboto;">SIGN
-                UP</a>
-
+              <a class="call-to-signup">SIGNUP</a>
             </div>
           </div>
-
         </mat-dialog-actions>
       </form>
     </mat-card-content>
 
-    <div fxLayout="column" fxLayoutAlign="end center" fxShow fxHide.lt-sm="true" fxFlex.gt-xs="33">
-      <pre
-        style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
-        height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
-      <div
-        style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b">
+    <div class="footer" fxLayout="column" fxLayoutAlign="end center" fxHide.lt-sm="true" fxFlex.gt-xs="33">
+      <pre>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
+      <div>
         Copyright ©
         2020 Millenia BANK
       </div>
     </div>
   </div>
 
-  <div style="position:relative;top:26%" fxLayout="column" fxShow fxHide.gt-xs="true" fxFlex.lt-sm="50"
-    fxFlex.gt-xs="40">
-    <pre style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
-      height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
+  <div class="footer" style="position:relative;top:26%" fxHide.gt-xs="true" fxFlex.lt-sm="50">
+    <pre>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
   </div>
-
 </div>

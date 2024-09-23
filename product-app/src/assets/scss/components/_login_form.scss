@@ -35,21 +35,6 @@ padding-bottom:15px;
   width: 130px;
 }
 
-// /* Styles for web (1440px and above) */
-// @media (min-width: 1440px) {
-// .login-container {
-//   display: flex;
-//   flex-direction: row;
-// }
-// }
-
-// /* Styles for tablet and medium devices (in between 415px and 1439px) */
-// @media (min-width: 415px) and (max-width: 1439px) {
-//   .login-container {
-//     display: flex;
-//     flex-direction: row;
-//   }
-
 //   /* Styles for mobile (599px and below) */
 @media (max-width: 599px) {
   .millenia-logo {
@@ -92,7 +77,6 @@ padding-bottom:15px;
 
 .image-wrapper {
   position: relative;
-  width: 140px;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -108,10 +92,7 @@ padding: 25px;
 .illustration {
   position: absolute; /* Image positioned absolutely */
   width: 140px;
-  height: 300px;
-  object-fit: contain;
-  z-index: 2; /* Higher z-index to appear above the card */
-  top: -50px; /* Adjust positioning to move the image above the card */
+  top: -10px; /* Adjust positioning to move the image above the card */
 }
 
 .card-button {
@@ -291,4 +272,83 @@ padding: 25px;
   transform: translateY(-50%);
   font-size: 20px;
   color: #6267C1; /* Adjust the color to match your design */
+}
+
+.login-image {
+  background-image: url(../../../assets/images/login/main_illustration.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+}
+
+
+@media (max-width: 599px) {
+  .mobile-form {
+    height:100vh;
+  }
+}
+
+[disabled].mat-raised-button {
+  box-shadow: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mat-raised-button {
+  border-radius: 4.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-button {
+width: 378px;
+height: 56px;
+border-radius:5px;
+font-weight: 500px;
+line-height:15.96px;
+letter-spacing: 1.25px;
+font-size: 14px;
+}
+
+.footer {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color:#41427b
+}
+
+.ask-for-account{
+  color:#3D429A;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+.call-to-signup {
+  color: #2E3275;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.forgot-credentials{
+  text-align: right;
+  width:100%;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.call-for-credentials {
+  font-weight: 500;
+  font-size: 18px;
+  line-height:23.94px;
+}
+
+.greetings {
+  font-weight: 400 !important;
+  font-size: 40px !important;
+  line-height:40px !important;;
+  color:#3D429A
 }

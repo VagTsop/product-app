@@ -1,14 +1,14 @@
-<div style="height: 100%" fxLayout.lt-sm="column wrap" fxLayout.gt-xs="row" class="mobile-container">
+<div style="height: 100%" fxLayout.lt-sm="column wrap" fxLayout.gt-xs="row">
 
-  <div style="padding-left:35px" fxShow fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center"
-    fxFlex="50" style="height:555px">
+  <div style="padding-left:35px" fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center" fxFlex="50"
+    style="height:555px">
 
     <div fxHide.lt-sm="true" class="card">
 
       <div class="content">
 
-        <h2 style="font-weight: 400; font-size: 40px; line-height:40px; font-family:Roboto">Portfolio</h2>
-        <p style="font-weight: 500; font-size: 18px; line-height:40px; font-family:Roboto;color: #D84E91;">All your
+        <h2 class="product-list-title">Portfolio</h2>
+        <p class="product-list-subtitle">All your
           accounts at a glance</p>
       </div>
 
@@ -21,20 +21,18 @@
   </div>
 
 
-  <div fxShow fxHide.gt-xs="true" fxFlex="16" fxLayoutAlign="start end"
-    style="width:107%;  background: linear-gradient(135deg, #4b3f72, #d5538c);">
-    <p
-      style="font-weight: 400px;font-family: Roboto;line-height:40.25px;letter-spacing: 1.25px;font-size: 35px;color: #FFFFFF;padding-left:20px;padding-bottom: 10px;">
-      Porfolio</p>
+  <div fxHide.gt-xs="true" fxFlex="16" fxLayoutAlign="start end" class="product-list-title-mobile-container">
+
+    <p class="product-list-title-mobile">Porfolio</p>
   </div>
 
   <div fxLayout="column" fxFlex="50">
 
-    <div class="product-section" style="padding: 25px;padding-top:0">
+    <div class="product-item-section">
       <!-- Loop through the grouped product names -->
       <ng-container *ngFor="let productGroup of groupedProducts | keyvalue">
-        <div class="product-group" style="margin-top:30px">
-          <h2 style="font-family:Roboto; font-weight: 500;font-size: 14px;line-height: 23.8px;color: #2E3275">
+        <div class="product-group">
+          <h2>
             {{
             productGroup.key }}
           </h2> <!-- Product Title -->
@@ -42,11 +40,11 @@
           <!-- Loop through the products under the same title -->
           <ng-container *ngFor="let product of productGroup.value">
 
-            <mat-card style="cursor:pointer" (click)="onProductClick(product,  productGroup.key)">
+            <mat-card (click)="onProductClick(product,  productGroup.key)">
 
-              <div fxLayout="row">
+              <div>
 
-                <div fxLayout="column" fxFlex="1" [ngStyle]="{
+                <div fxFlex="1.5" [ngStyle]="{
                   'height.px': 140,
                   'width.px': 8,
                   'background-color': colorMapping[productGroup.key] || '#000',
@@ -54,37 +52,33 @@
                 }"> </div>
 
 
-                <div fxLayout="column" fxFlex="50" style="padding-left: 30px;" fxLayoutAlign="start space-between ">
+                <div fxLayout="column" fxFlex="50" style="padding-left: 15px;" fxLayoutAlign="start space-between ">
 
-                  <div style="padding-top: 10px;">
-                    <p
-                      style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
-                      {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
+                  <div style="padding-top: 30px;">
 
-                    <!-- Use title or nickname -->
-                    <p style="font-weight: 500;font-size: 16px;line-height: 24px;color: #2E3275;">{{ product.subtitle
-                      }}
-                    </p>
+                    <p class="product-title-nickname">{{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
+                    <p class="product-subtitle">{{ product.subtitle }}</p>
                   </div>
 
                   <div style="padding-top: 10px;">
-                    <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
-                      <img [src]="product.thumbnailUrl" alt="Product Icon">
+                    <div class="home-card-container" fxLayoutAlign="center center">
+                      <mat-card class="home-card" fxLayoutAlign="center center">
+                        <img [src]="product.thumbnailUrl" alt="Product Icon">
+                      </mat-card>
                     </div>
                   </div>
                 </div>
 
                 <div fxLayout="column" fxFlex="49" fxLayoutAlign="end end">
 
-                  <p
-                    style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 16px;color: #6267C1;margin: 0;">
+                  <p class="product-details-status">
                     {{ product.status === 'Active' ? 'active' : 'disabled' }}
                   </p>
 
 
-                  <p style="font-family:Roboto; font-weight: 700;font-size: 16px;line-height: 18.75px;color: #2E3275;"
-                    class="price">{{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}</p>
-                  <!-- Display balance with currency -->
+                  <p class="product-details-price">
+                    {{ (product.balance | number: '1.2-2') + ' ' + product.currencyCode }}
+                  </p>
                 </div>
               </div>
             </mat-card>
@@ -92,24 +86,18 @@
         </div>
       </ng-container>
 
-      <div fxShow fxHide.gt-xs="true" class="round-button" fxLayoutAlign="center center">
+      <div fxHide.gt-xs="true" class="round-button" fxLayoutAlign="center center">
         <mat-icon style="color:white" matTooltip="Add Product">add
         </mat-icon>
       </div>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="end center" fxShow fxHide.lt-sm="true" fxFlex.gt-xs="15"
-      style="position: fixed; bottom: 20px; right: 0%;left: 50%">
-      <pre
-        style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b"
-        height>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
-      <div
-        style="text-align: center;font-family:Roboto;font-weight: 400;font-size: 12px;line-height: 16px;color:#41427b">
+    <div class="footer" fxLayout="column" fxLayoutAlign="end center" fxHide.lt-sm="true" fxFlex.gt-xs="33">
+      <pre>imprint   |   Legal resource   |   Data Protection   |   Accessibility</pre>
+      <div>
         Copyright ©
         2020 Millenia BANK
       </div>
     </div>
-
-
   </div>
 </div>
