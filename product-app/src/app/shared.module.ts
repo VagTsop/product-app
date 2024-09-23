@@ -11,32 +11,16 @@ import { MatInputModule } from "@angular/material/input";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSelectModule } from '@angular/material/select';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import { MatNativeDateModule } from "@angular/material/core";
-import { MatDialogModule } from "@angular/material/dialog";
 
 const MATERIAL_MODULES = [
   MatIconModule,
-  MatDividerModule,
   MatButtonModule,
   MatMenuModule,
   MatCardModule,
   MatFormFieldModule,
-  MatCheckboxModule,
   MatInputModule,
-  MatDialogModule,
   MatTooltipModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatSelectModule,
   MatSidenavModule,
-  MatProgressSpinnerModule,
-  NgxMatSelectSearchModule,
   MatToolbarModule
 ];
 

@@ -6,12 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  @Input() username: string = '';  // Accept username as an input
+  @Input() username: string = '';
 
   constructor(public router: Router) { }
 
   ngOnInit(): void {
-
   }
 
   ngOnDestroy() { }

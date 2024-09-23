@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   onLoginSuccess(username: string) {
     this.isLoggedIn = true;
-    this.username = username;  // Store the username
-    this.router.navigate(['/product-list']); // Navigate to product details after login
+    this.username = username;
+    this.router.navigate(['/product-list']); 
   }
 }

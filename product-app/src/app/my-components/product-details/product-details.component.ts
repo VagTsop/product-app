@@ -8,35 +8,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   productId: string | null = null;
-  product: any = null; // Define a variable to hold the product details
+  product: any = null;
   searchQuery: string = '';
-  transactions: any[] = []; // To store the fetched transactions
+  transactions: any[] = [];
   filteredResults: any[] = [];
 
-  constructor(private http: HttpClient, // Inject HttpClient service
+  constructor(private http: HttpClient,
     private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    // Get the product ID from the route parameters
     this.productId = this.route.snapshot.paramMap.get('id');
-
-    // Retrieve the product from the state passed during navigation
     this.product = history.state.product;
-
-    // Check if product was passed, else fetch it based on ID (optional fallback)
     if (!this.product) {
-      // Fetch the product from a service using the productId
       console.log('Product was not passed in state. Fetch it using productId:', this.productId);
     } else {
       console.log('Product details:', this.product);
     }
 
     this.loadTransactions();
-
   }
 
   loadTransactions(): void {
-    // Fetch the JSON file with transactions
     this.http.get<any[]>('/assets/data/transactions.json').subscribe((data) => {
       this.transactions = data;
       this.filteredResults = data; // Initially show all transactions
