@@ -63,4 +63,46 @@
     style="position: absolute;bottom: -74px;left: 110px;z-index: 1;" class="card-button"><mat-icon style="color:white;"
       matTooltip="Add Product">add
     </mat-icon> NEW TRANSACTION</button>
+
+  <div class="container" fxLayout="column">
+
+    <div class="search-header">
+      <!-- Search Input -->
+      <div class="search-wrapper" style="position: relative">
+        <img src="./assets/images/icons/search_icon.png" style="position: absolute; top: 12px;left:12px">
+        <input type="text" class="search-bar" placeholder="Search by keyword, beneficiary or whatever"
+          [(ngModel)]="searchQuery" (input)="onSearch()" />
+
+        <!-- Export Icon (if applicable) -->
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <button class="export-btn">
+        <img src="./assets/images/icons/document_export.png" style="width:24px;height:24px;margin-bottom:17px">
+      </button>
+      <p>EXPORT</p>
+    </div>
+
+
+
+    <!-- Filtered Results -->
+    <div class="transaction-list" *ngIf="filteredResults.length > 0">
+      <div *ngFor="let result of filteredResults" class="transaction-item">
+        <div class="transaction-date">{{ result.date | date:'dd/MM/yyyy' }}</div>
+        <div class="transaction-details">
+          <div class="transaction-title">{{ result.title }}</div>
+          <div class="transaction-subtitle">{{ result.subtitle }}</div>
+        </div>
+        <div class="transaction-amount" [ngClass]="{'debit': result.amount < 0, 'credit': result.amount > 0}">
+          {{ result.amount | number:'1.2-2' }} {{ result.currencyCode }}
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div *ngIf="filteredResults.length === 0 && searchQuery.length > 0">
+      <p>No transactions found matching your search.</p>
+    </div>
+  </div>
 </div>
