@@ -42,7 +42,7 @@
           <!-- Loop through the products under the same title -->
           <ng-container *ngFor="let product of productGroup.value">
 
-            <mat-card style="cursor:pointer" (click)="onProductClick(product)">
+            <mat-card style="cursor:pointer" (click)="onProductClick(product,  productGroup.key)">
 
               <div fxLayout="row">
 

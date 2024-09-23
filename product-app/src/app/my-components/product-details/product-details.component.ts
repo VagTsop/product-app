@@ -54,6 +54,4 @@ export class ProductDetailsComponent implements OnInit {
       this.filteredResults = this.transactions;
     }
   }
-
-
 }

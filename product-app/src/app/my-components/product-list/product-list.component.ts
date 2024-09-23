@@ -39,8 +39,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }, {});
   }
 
-  onProductClick(product: any): void {
-    this.router.navigate(['/products', product.id], { state: { product } }); // Pass full product as state
+  onProductClick(product: any, productGroupKey: string): void {
+    const productWithColor = { ...product, color: this.colorMapping[productGroupKey] || '#000' };
+    this.router.navigate(['/products', product.id], { state: { product: productWithColor } });
   }
-  ngOnDestroy() { }
+
+  ngOnDestroy() {}
 }

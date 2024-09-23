@@ -13,24 +13,24 @@
 
         <div fxLayout="row">
 
-          <div fxLayout="column" fxFlex="1" [ngStyle]="{
+          <div fxLayout="column" fxFlex="1.5" [ngStyle]="{
             'height.px': 246.37,
             'width.px': 8,
-            'background-color': '#5AB970',
+            'background-color': product.color || '#5AB970',
             'border-radius': '20px'
-          }"> </div>
+          }"></div>
 
-          <div fxFlex fxLayout="column">
+          <div style="margin-left: 20px;" fxFlex fxLayout="column" fxLayoutAlign="space-between center">
 
             <div fxLayout="row" style="width:100%" fxLayoutAlign="space-between center">
 
-              <div style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
+              <mat-card style="background-color: #F4F5FB;width: 57.42px;height:39.21px" fxLayoutAlign="center center">
                 <img [src]="product.thumbnailUrl" alt="Product Icon">
-              </div>
+              </mat-card>
 
               <div>
                 <p
-                  style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;">
+                  style="font-family:Roboto; font-weight: 400;font-size: 12px;line-height: 15.96px;color: #3D429A;margin: 0;text-align: right;">
                   {{ product.titleNickname || 'Standard LOREM IPSUM'}}</p>
 
                 <!-- Use title or nickname -->
@@ -45,13 +45,31 @@
 
             <div fxLayout="row" style="width:100%">
 
+              <div fxLayout="row" style="width:100%">
+
+                <div fxFlex fxLayout="column" style="width:95%">
+                  <p
+                    style="font-family:Roboto; font-weight: 500;font-size: 22px;line-height: 24px;color: #9D235E;margin:0 0 8px 0px;">
+                    Finuevo Premium</p>
+                  <p style="font-family:Roboto; font-weight: 500;font-size: 22px;line-height: 24px;color: #2E3275;">{{
+                    product.subtitle }}</p>
+                </div>
+
+
+                <div fxFlex fxLayout="column" style="width:5%;padding-bottom:10px" fxLayoutAlign="center end">
+                  <div fxFlex="95">
+                    <img src="./assets/images/icons/edit.png">
+                  </div>
+                  <div fxFlex="95">
+                    <img src="./assets/images/icons/copy.png">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </mat-card>
     </div>
-
-
   </div>
 
 
