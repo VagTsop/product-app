@@ -14,3 +14,9 @@ This project is a responsive web application for fictional bank known as "Millen
 
 - **Services:**
   - **ProductService**: Handles loading products and transactions from static data.
+
+
+![Millenia Logo](./assets/images/icons/image001.png)
+![Millenia Logo](./assets/images/icons/image002.png)
+![Millenia Logo](./assets/images/icons/image003.png)
+![Millenia Logo](./assets/images/icons/image004.png)
