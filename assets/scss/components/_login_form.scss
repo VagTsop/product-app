@@ -1,0 +1,354 @@
+.example-full-width {
+  width: 378px;
+  height: 65px;
+}
+
+.error-message {
+color: #9D235E;
+padding-bottom:15px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  /* padding: .4375em 0; */
+  border: 1px solid ;
+  height: 65px;
+  border-radius: 6px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.28125em;
+  left: 15px;
+}
+.gradient {
+  background: linear-gradient(to right, #4b3f72, #d5538c);
+}
+
+
+.millenia-logo {
+  background-image: url(../../../assets/images/icons/MILLENIA.png);
+}
+
+.millenia-logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 130px;
+}
+
+//   /* Styles for mobile (599px and below) */
+@media (max-width: 599px) {
+  .millenia-logo {
+    width:inherit;
+    max-height: 8% !important;
+    margin-top: 30px;
+  }
+ }
+// }
+.mat-toolbar {
+  background: none !important;
+}
+.card {
+  width: 521px;
+  height: 322px;
+  background: linear-gradient(135deg, #4b3f72, #d5538c);
+  border-radius:  0 75px 0 75px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1; /* Lower z-index to allow image on top */
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.content p {
+  margin: 5px 0 20px;
+  font-size: 16px;
+  color: #f9c8db;
+}
+
+.image-wrapper {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content  {
+text-align: left;
+width: 100%;
+padding: 25px;
+}
+
+.illustration {
+  position: absolute; /* Image positioned absolutely */
+  width: 140px;
+  top: -10px; /* Adjust positioning to move the image above the card */
+}
+
+.card-button {
+  background: linear-gradient(to right, #4b3f72, #d5538c);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  width: 218px;
+  height: 56px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Roboto;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.card-button:hover {
+  opacity: 0.9;
+}
+
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow:
+      0px 6px 30px -2px rgba(0, 0, 0, 0.3), /* Πιο έντονη σκιά */
+      0px 3px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 3px 20px 0px rgba(0, 0, 0, 0.15); /* Αυξημένη διάδοση */
+}
+
+.mobile-container{
+  padding:0;
+}
+.mobile-main-container {
+  padding: 25px;
+}
+@media (max-width: 599px) {
+  .mobile-main-container {
+    padding: 0;
+  }
+}
+.round-button {
+  width: 56px;          /* Fixed width */
+  height: 56px;         /* Fixed height */
+  position: relative;   /* Allows for positioning the button relative to parent */
+  border-radius: 50%;   /* Make it round */
+  background: linear-gradient(to right, #4b3f72, #d5538c);
+  display: flex;        /* Flexbox to center the icon */
+  align-items: center;  /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better look */
+  border-radius: 30px;  /* Rounded corners */
+  cursor: pointer;      /* Changes cursor to pointer on hover */
+  top: -98px;
+  left: 213px;
+}
+
+/* search.component.css */
+.search-container {
+  position: relative;
+  width: 596px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.results-dropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 850px;
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 596px;
+  padding-left: 55px;
+  padding-top: 13px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #F4F5FB;
+  border: none;
+
+}
+
+.export-btn {
+  background-color: transparent;
+  border: none;
+  color: #6267C1;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.transaction-list {
+  margin-top: 20px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ABAEDE;
+  padding: 15px 0;
+}
+
+.transaction-date {
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
+.transaction-details {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.transaction-title {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.transaction-subtitle {
+  color: #666;
+  font-size: 12px;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.transaction-amount.debit {
+  color: #E53935;
+}
+
+.transaction-amount.credit {
+  color: #43A047;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #6267C1; /* Adjust the color to match your design */
+}
+
+.login-image {
+  background-image: url(../../../assets/images/icons/main_illustration.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+}
+
+
+@media (max-width: 599px) {
+  .mobile-form {
+    height:100vh;
+  }
+}
+
+[disabled].mat-raised-button {
+  box-shadow: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mat-raised-button {
+  border-radius: 4.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-button {
+width: 378px;
+height: 56px;
+border-radius:5px;
+font-weight: 500px;
+line-height:15.96px;
+letter-spacing: 1.25px;
+font-size: 14px;
+}
+
+.footer {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color:#41427b
+}
+
+.ask-for-account{
+  color:#3D429A;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+.call-to-signup {
+  color: #2E3275;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.forgot-credentials{
+  text-align: right;
+  width:100%;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.call-for-credentials {
+  font-weight: 500;
+  font-size: 18px;
+  line-height:23.94px;
+}
+
+.greetings {
+  font-weight: 400 !important;
+  font-size: 40px !important;
+  line-height:40px !important;;
+  color:#3D429A
+}
