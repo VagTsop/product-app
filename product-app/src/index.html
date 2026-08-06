@@ -1,17 +1,37 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Product-App</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-
-<body class="mat-typography">
-  <app-root></app-root>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>Millenia Bank — Private Banking</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Millenia Bank — a modern digital banking experience built with Angular."
+    />
+    <meta name="theme-color" content="#0b0b1a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f5fb" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the persisted theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('millenia.theme');
+          var dark =
+            t === 'dark' ||
+            (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

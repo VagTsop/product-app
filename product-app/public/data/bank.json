@@ -1,0 +1,398 @@
+{
+  "user": {
+    "id": "u-1",
+    "username": "admin",
+    "fullName": "Elena Marinos",
+    "email": "elena.marinos@millenia.example",
+    "since": "2016-04-11",
+    "tier": "Private"
+  },
+  "accounts": [
+    {
+      "id": "acc-eur-current",
+      "kind": "current",
+      "title": "Current Account",
+      "nickname": "Everyday",
+      "iban": "GR06 0160 7650 0000 0000 852",
+      "currency": "EUR",
+      "balance": 12480.36,
+      "available": 12180.36,
+      "status": "active",
+      "openedAt": "2016-04-11"
+    },
+    {
+      "id": "acc-usd-current",
+      "kind": "current",
+      "title": "Current Account",
+      "nickname": "Travel USD",
+      "iban": "CY06 0160 7650 0000 0000 178",
+      "currency": "USD",
+      "balance": 4215.9,
+      "available": 4215.9,
+      "status": "active",
+      "openedAt": "2019-09-02"
+    },
+    {
+      "id": "acc-eur-savings",
+      "kind": "savings",
+      "title": "Savings Account",
+      "nickname": "Rainy day",
+      "iban": "GR06 0160 7650 0000 0000 441",
+      "currency": "EUR",
+      "balance": 96480.2,
+      "available": 96480.2,
+      "status": "active",
+      "openedAt": "2018-01-22",
+      "interestRate": 0.0215
+    },
+    {
+      "id": "acc-eur-loan",
+      "kind": "loan",
+      "title": "Mortgage Loan",
+      "nickname": "Kolonaki flat",
+      "iban": "FR06 0160 7650 0000 0000 852",
+      "currency": "EUR",
+      "balance": -68400,
+      "available": 0,
+      "status": "active",
+      "openedAt": "2021-06-30",
+      "principal": 165000,
+      "interestRate": 0.0295,
+      "instalment": 612.4
+    },
+    {
+      "id": "acc-eur-credit",
+      "kind": "credit-card",
+      "title": "Credit Card Account",
+      "nickname": "Millenia Signature",
+      "iban": "GR06 0160 7650 0000 0000 993",
+      "currency": "EUR",
+      "balance": -1284.55,
+      "available": 3715.45,
+      "status": "active",
+      "openedAt": "2020-11-14",
+      "creditLimit": 5000
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-1",
+      "accountId": "acc-eur-current",
+      "holder": "ELENA MARINOS",
+      "number": "4165 8156 4529 8593",
+      "expiry": "07/29",
+      "cvv": "418",
+      "network": "visa",
+      "kind": "physical",
+      "frozen": false,
+      "contactless": true,
+      "onlinePayments": true,
+      "monthlyLimit": 3000,
+      "spentThisMonth": 1142.8,
+      "currency": "EUR"
+    },
+    {
+      "id": "card-2",
+      "accountId": "acc-eur-current",
+      "holder": "ELENA MARINOS",
+      "number": "5218 4471 9032 6614",
+      "expiry": "01/28",
+      "cvv": "902",
+      "network": "mastercard",
+      "kind": "virtual",
+      "frozen": false,
+      "contactless": false,
+      "onlinePayments": true,
+      "monthlyLimit": 800,
+      "spentThisMonth": 214.99,
+      "currency": "EUR"
+    },
+    {
+      "id": "card-3",
+      "accountId": "acc-eur-credit",
+      "holder": "ELENA MARINOS",
+      "number": "4539 7712 0084 1127",
+      "expiry": "11/27",
+      "cvv": "770",
+      "network": "visa",
+      "kind": "physical",
+      "frozen": true,
+      "contactless": true,
+      "onlinePayments": false,
+      "monthlyLimit": 5000,
+      "spentThisMonth": 1284.55,
+      "currency": "EUR"
+    }
+  ],
+  "payees": [
+    {
+      "id": "p-1",
+      "name": "Nikos Marinos",
+      "iban": "GR16 0110 1250 0000 0001 2300 695",
+      "bank": "Piraeus Bank",
+      "favourite": true,
+      "lastUsed": "2026-07-28",
+      "initials": "NM"
+    },
+    {
+      "id": "p-2",
+      "name": "Aegean Property Management",
+      "iban": "GR96 0810 1050 0000 0001 2300 001",
+      "bank": "Alpha Bank",
+      "favourite": true,
+      "lastUsed": "2026-08-01",
+      "initials": "AP"
+    },
+    {
+      "id": "p-3",
+      "name": "Sofia Papadaki",
+      "iban": "CY17 0020 0128 0000 0012 0052 7600",
+      "bank": "Bank of Cyprus",
+      "favourite": false,
+      "lastUsed": "2026-06-14",
+      "initials": "SP"
+    },
+    {
+      "id": "p-4",
+      "name": "Helios Energy",
+      "iban": "GR41 0140 1000 0000 0001 1234 567",
+      "bank": "Eurobank",
+      "favourite": false,
+      "lastUsed": "2026-07-19",
+      "initials": "HE"
+    },
+    {
+      "id": "p-5",
+      "name": "Studio Nine Design",
+      "iban": "DE89 3704 0044 0532 0130 00",
+      "bank": "Commerzbank",
+      "favourite": false,
+      "lastUsed": null,
+      "initials": "SN"
+    },
+    {
+      "id": "p-6",
+      "name": "Dimitra Kolla",
+      "iban": "GB29 NWBK 6016 1331 9268 19",
+      "bank": "NatWest",
+      "favourite": true,
+      "lastUsed": "2026-05-30",
+      "initials": "DK"
+    }
+  ],
+  "merchants": [
+    {
+      "name": "Sklavenitis",
+      "description": "Card purchase",
+      "category": "groceries",
+      "min": 18,
+      "max": 96,
+      "weight": 9
+    },
+    {
+      "name": "AB Vassilopoulos",
+      "description": "Card purchase",
+      "category": "groceries",
+      "min": 12,
+      "max": 74,
+      "weight": 7
+    },
+    {
+      "name": "Ergon Deli",
+      "description": "Card purchase",
+      "category": "dining",
+      "min": 14,
+      "max": 58,
+      "weight": 6
+    },
+    {
+      "name": "Taf Coffee",
+      "description": "Contactless payment",
+      "category": "dining",
+      "min": 3,
+      "max": 11,
+      "weight": 10
+    },
+    {
+      "name": "Nolan Restaurant",
+      "description": "Card purchase",
+      "category": "dining",
+      "min": 42,
+      "max": 130,
+      "weight": 3
+    },
+    {
+      "name": "Taxibeat",
+      "description": "Card purchase",
+      "category": "transport",
+      "min": 6,
+      "max": 24,
+      "weight": 7
+    },
+    {
+      "name": "OASA Athens",
+      "description": "Direct debit",
+      "category": "transport",
+      "min": 27,
+      "max": 30,
+      "weight": 2
+    },
+    {
+      "name": "Shell Hellas",
+      "description": "Card purchase",
+      "category": "transport",
+      "min": 35,
+      "max": 82,
+      "weight": 4
+    },
+    {
+      "name": "Zara",
+      "description": "Card purchase",
+      "category": "shopping",
+      "min": 29,
+      "max": 190,
+      "weight": 3
+    },
+    {
+      "name": "Public.gr",
+      "description": "Online purchase",
+      "category": "shopping",
+      "min": 15,
+      "max": 240,
+      "weight": 3
+    },
+    {
+      "name": "IKEA Greece",
+      "description": "Card purchase",
+      "category": "shopping",
+      "min": 40,
+      "max": 380,
+      "weight": 2
+    },
+    {
+      "name": "Vodafone CY",
+      "description": "Bill payment",
+      "category": "bills",
+      "min": 42,
+      "max": 78,
+      "weight": 2
+    },
+    {
+      "name": "Helios Energy",
+      "description": "Direct debit",
+      "category": "bills",
+      "min": 58,
+      "max": 165,
+      "weight": 2
+    },
+    {
+      "name": "EYDAP Water",
+      "description": "Direct debit",
+      "category": "bills",
+      "min": 18,
+      "max": 44,
+      "weight": 1
+    },
+    {
+      "name": "Netflix",
+      "description": "Subscription",
+      "category": "entertainment",
+      "min": 12,
+      "max": 12,
+      "weight": 2
+    },
+    {
+      "name": "Spotify",
+      "description": "Subscription",
+      "category": "entertainment",
+      "min": 10,
+      "max": 10,
+      "weight": 2
+    },
+    {
+      "name": "APPLE.COM/BILL",
+      "description": "Subscription",
+      "category": "entertainment",
+      "min": 2.99,
+      "max": 29.99,
+      "weight": 3
+    },
+    {
+      "name": "Odeon Cinemas",
+      "description": "Card purchase",
+      "category": "entertainment",
+      "min": 9,
+      "max": 32,
+      "weight": 2
+    },
+    {
+      "name": "Pharmacy Kolonaki",
+      "description": "Card purchase",
+      "category": "health",
+      "min": 8,
+      "max": 62,
+      "weight": 3
+    },
+    {
+      "name": "Hygeia Hospital",
+      "description": "Card purchase",
+      "category": "health",
+      "min": 60,
+      "max": 240,
+      "weight": 1
+    },
+    {
+      "name": "Aegean Airlines",
+      "description": "Online purchase",
+      "category": "travel",
+      "min": 89,
+      "max": 460,
+      "weight": 2
+    },
+    {
+      "name": "Booking.com",
+      "description": "Online purchase",
+      "category": "travel",
+      "min": 110,
+      "max": 520,
+      "weight": 1
+    }
+  ],
+  "recurring": [
+    {
+      "merchant": "Helvetia Digital Ltd",
+      "description": "Salary",
+      "category": "income",
+      "amount": 4850,
+      "dayOfMonth": 1
+    },
+    {
+      "merchant": "Aegean Property Management",
+      "description": "Standing order — rent",
+      "category": "bills",
+      "amount": -980,
+      "dayOfMonth": 3
+    },
+    {
+      "merchant": "Millenia Bank",
+      "description": "Mortgage instalment",
+      "category": "bills",
+      "amount": -612.4,
+      "dayOfMonth": 5
+    },
+    {
+      "merchant": "Studio Nine Design",
+      "description": "Consulting invoice",
+      "category": "income",
+      "amount": 1200,
+      "dayOfMonth": 14
+    },
+    {
+      "merchant": "Rainy day",
+      "description": "Standing order — savings",
+      "category": "transfer",
+      "amount": -600,
+      "dayOfMonth": 27
+    }
+  ]
+}

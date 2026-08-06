@@ -1,0 +1,87 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**/*.md'
+      - LICENSE
+  workflow_dispatch:
+
+# Only the GITHUB_TOKEN is used, and only to push the built site to gh-pages.
+permissions:
+  contents: write
+
+# Never let two deploys race for the gh-pages branch.
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: true
+
+env:
+  APP_DIR: product-app
+  # `ng build` writes to dist/<project>/browser with the application builder.
+  DIST_DIR: product-app/dist/millenia-web/browser
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@v4
+        with:
+          # Full history so the gh-pages worktree can be added below.
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ env.APP_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.APP_DIR }}
+        run: npm ci
+
+      - name: Build
+        working-directory: ${{ env.APP_DIR }}
+        run: npm run build:pages
+
+      - name: Prepare the Pages artefacts
+        run: |
+          # GitHub Pages serves 404.html for unknown paths — pointing it at the
+          # SPA shell makes deep links like /product-app/cards survive a refresh.
+          cp "$DIST_DIR/index.html" "$DIST_DIR/404.html"
+          # Stop Jekyll from swallowing files and folders that start with "_".
+          touch "$DIST_DIR/.nojekyll"
+
+      - name: Publish to gh-pages
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Reuse the existing branch when there is one, so history is kept.
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add ../pages gh-pages
+          else
+            git worktree add --detach ../pages
+            git -C ../pages checkout --orphan gh-pages
+          fi
+
+          # Replace the published tree wholesale, keeping .git itself.
+          find ../pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r "$DIST_DIR/." ../pages/
+
+          cd ../pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Site is unchanged — nothing to publish."
+          else
+            git commit -m "Deploy ${GITHUB_SHA::7}"
+            git push origin gh-pages
+          fi
+
+      - name: Summary
+        run: echo "Deployed to https://vagtsop.github.io/product-app/" >> "$GITHUB_STEP_SUMMARY"

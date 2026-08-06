@@ -1,0 +1,51 @@
+import type { ProductKind, TransactionCategory } from '../../core/models/banking.models';
+import type { IconName } from '../ui/icon';
+
+export interface CategoryMeta {
+  readonly icon: IconName;
+  /** Chart colour — a hand-tuned, colour-blind-safe sequence. */
+  readonly color: string;
+}
+
+export const CATEGORY_META: Record<TransactionCategory, CategoryMeta> = {
+  income: { icon: 'arrowDownLeft', color: '#10b981' },
+  groceries: { icon: 'cart', color: '#6b5bf5' },
+  dining: { icon: 'cutlery', color: '#c026d3' },
+  transport: { icon: 'car', color: '#22d3ee' },
+  shopping: { icon: 'briefcase', color: '#f59e0b' },
+  bills: { icon: 'receipt', color: '#f43f5e' },
+  entertainment: { icon: 'film', color: '#8b5cf6' },
+  health: { icon: 'heart', color: '#14b8a6' },
+  travel: { icon: 'plane', color: '#0ea5e9' },
+  transfer: { icon: 'transfer', color: '#94a3b8' },
+};
+
+export interface ProductMeta {
+  readonly icon: IconName;
+  /** CSS gradient used for the product tile and the account hero. */
+  readonly gradient: string;
+  readonly accent: string;
+}
+
+export const PRODUCT_META: Record<ProductKind, ProductMeta> = {
+  current: {
+    icon: 'wallet',
+    gradient: 'linear-gradient(135deg, #5b3ee8 0%, #6b5bf5 45%, #a855f7 100%)',
+    accent: '#6b5bf5',
+  },
+  savings: {
+    icon: 'shield',
+    gradient: 'linear-gradient(135deg, #0891b2 0%, #22d3ee 55%, #34d399 100%)',
+    accent: '#0ea5e9',
+  },
+  loan: {
+    icon: 'bank',
+    gradient: 'linear-gradient(135deg, #b45309 0%, #f59e0b 55%, #fbbf24 100%)',
+    accent: '#f59e0b',
+  },
+  'credit-card': {
+    icon: 'card',
+    gradient: 'linear-gradient(135deg, #9d174d 0%, #c026d3 55%, #f43f5e 100%)',
+    accent: '#c026d3',
+  },
+};

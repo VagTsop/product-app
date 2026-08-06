@@ -1,22 +1,28 @@
 # Millenia Bank Web Application
 
-## Overview
+A digital-banking demo built with **Angular 20** — standalone components, signals,
+zoneless change detection and a hand-built design system on **Tailwind CSS v4**.
 
-This project is a responsive web application for fictional bank known as "Millenia Bank", built using Angular. It features user authentication, portfolio management, transaction tracking, and a dashboard for viewing and managing accounts. The application is optimized for both desktop and mobile devices, with specific layouts and styles for different screen sizes.
+**Live:** https://vagtsop.github.io/product-app/ · **Demo login:** `admin` / `123`
 
-## Project Structure
+The application lives in [`product-app/`](product-app). See its
+[README](product-app/README.md) for the architecture notes.
 
-- **Components:**
-  - **HeaderComponent**: Displays a header with navigation icons, user details, and actions for both desktop and mobile views.
-  - **LoginComponent**: Manages user login functionality with validation.
-  - **ProductListComponent**: Displays the list of products grouped by type.
-  - **ProductDetailsComponent**: Shows the details of a specific product, including transactions.
+```bash
+cd product-app
+npm install
+npm start            # http://localhost:4200
+npm run build:pages  # production build with the GitHub Pages base href
+```
 
-- **Services:**
-  - **ProductService**: Handles loading products and transactions from static data.
+## Screens
 
+- **Dashboard** — net-worth trend, 12-month cash flow, spending breakdown, recent activity
+- **Accounts** — grouped by product family; detail view with running balances, IBAN copy,
+  inline rename, loan and credit-limit progress
+- **Cards** — flip to reveal, freeze/unfreeze, payment controls, monthly limit
+- **Transfers** — three-step wizard with IBAN MOD-97 validation and a review step
+- **Transactions** — search, filters, day grouping, CSV export
 
-![Millenia Logo](product-app/src/assets/images/icons/image001.png)
-![Millenia Logo](product-app/src/assets/images/icons/image002.png)
-![Millenia Logo](product-app/src/assets/images/icons/image003.png)
-![Millenia Logo](product-app/src/assets/images/icons/image004.png)
+Light and dark themes plus English/Greek, both persisted. No backend — all data is
+seeded from `public/data/bank.json`.
