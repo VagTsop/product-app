@@ -2,10 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
-    paths-ignore:
-      - '**/*.md'
-      - LICENSE
+    branches:
+      - master
   workflow_dispatch:
 
 # Only the GITHUB_TOKEN is used, and only to push the built site to gh-pages.
