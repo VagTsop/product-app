@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    # A README-only commit does not change the site, so skip the rebuild.
+    paths-ignore:
+      - '**/*.md'
+      - LICENSE
   workflow_dispatch:
 
 # Only the GITHUB_TOKEN is used, and only to push the built site to gh-pages.
